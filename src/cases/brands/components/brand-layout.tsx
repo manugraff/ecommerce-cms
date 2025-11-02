@@ -3,7 +3,7 @@ import { BrandDataTable } from "./data-table/brand-data-table"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group"
 import { Plus, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { BreadCrumb } from "@/components/layout/brand-crumb"
+import { BreadCrumb } from "@/components/layout/bread-crumb"
 import { Outlet, useNavigate } from "react-router-dom"
 
 
