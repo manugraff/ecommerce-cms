@@ -1,12 +1,21 @@
-import { Layout } from "lucide-react"
-import { CategoryDataTable } from "./cases/categories/components/data-table/category-data-table"
+import { Route, Routes } from "react-router-dom"
 import { CategoryLayout } from "./cases/categories/components/category-layout"
 
 function App() {
 
   return (
     <div className="wrapper">
-      <CategoryLayout/>
+      
+
+    <main>
+      <Routes>
+        <Route path="/categories" element={ <CategoryLayout/>}>
+          <Route path="new" element={ <CategoryLayout/>}/>
+          <Route path=":id" element={ <CategoryLayout/>}/>
+        </Route>
+      </Routes>
+    </main>
+
     </div>
   )
 }

@@ -15,10 +15,13 @@ import { Children, type ReactNode } from "react";
 type SidebarFormProps = {
    title: string; 
    children: ReactNode;
+   onSave: () => void;
+
 }
 export function SidebarForm({
     title,
-    children
+    children,
+    onSave
 }:SidebarFormProps) {
     const navigate = useNavigate();
     const location = useLocation();
@@ -46,7 +49,9 @@ export function SidebarForm({
                 <SheetFooter>
                     <div className="flex flex-row gap-1">
 
-                        <Button>
+                        <Button
+                            onClick={onSave}
+                        >
                             Salvar
                         </Button>
 
