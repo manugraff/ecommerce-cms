@@ -6,7 +6,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
 const formSchema = z.object({
@@ -61,9 +61,9 @@ export function CategoryForm() {
         }
     }
 
-    function onDelete(){
-        if(id){
-            deleteCategory.mutate(id,{
+    function onDelete() {
+        if (id) {
+            deleteCategory.mutate(id, {
                 onSettled: () => {
                     navigate('/categories')
                 }
@@ -75,7 +75,8 @@ export function CategoryForm() {
         <SidebarForm
             title={id ? 'Editar Categoria' : 'Adicionar Categoria'}
             onSave={form.handleSubmit(onSubmit)}
-            loading={isLoading}
+            {...(id && { onDelete:onDelete })}
+            looding={isLoading}
         >
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
