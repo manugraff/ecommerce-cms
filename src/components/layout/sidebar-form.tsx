@@ -15,13 +15,15 @@ import { Children, type ReactNode } from "react";
 type SidebarFormProps = {
    title: string; 
    children: ReactNode;
-   onSave: () => void;
+   onSave?: () => void;
+   looding: boolean;
 
 }
 export function SidebarForm({
     title,
     children,
-    onSave
+    onSave,
+    looding
 }:SidebarFormProps) {
     const navigate = useNavigate();
     const location = useLocation();
@@ -44,13 +46,17 @@ export function SidebarForm({
                     </SheetDescription>
                 </SheetHeader>
 
-                {children}
+                <div className="px-8">
+                     {children}
+                </div>
 
                 <SheetFooter>
                     <div className="flex flex-row gap-1">
 
                         <Button
+                            type="button"
                             onClick={onSave}
+                            disabled={looding}
                         >
                             Salvar
                         </Button>
@@ -58,6 +64,7 @@ export function SidebarForm({
                         <SheetClose asChild>
                             <Button
                                 variant='outline'
+                                disabled={looding}
                             >
                                 Cancelar
                             </Button>
