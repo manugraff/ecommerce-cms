@@ -1,11 +1,12 @@
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+
 
 type BreadCrumbProps = {
     title: string;
@@ -14,13 +15,13 @@ type BreadCrumbProps = {
 export function BreadCrumb({
     title
 }: BreadCrumbProps) {
-    return(
+    return (
         <Breadcrumb>
             <BreadcrumbList>
                 <BreadcrumbItem>
                     <BreadcrumbLink href="/">Home</BreadcrumbLink>
                 </BreadcrumbItem>
-                <BreadcrumbSeparator/>
+                <BreadcrumbSeparator />
                 <BreadcrumbItem>
                     <BreadcrumbPage>
                         {title}

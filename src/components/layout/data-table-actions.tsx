@@ -4,9 +4,8 @@ import { EditIcon } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 type DataTableActionProps = {
-    itemId: string
+    itemId: string | number;
 }
-
 export function DataTableAction({
     itemId
 }: DataTableActionProps) {
@@ -16,18 +15,17 @@ export function DataTableAction({
     function handleNavigateToId() {
         const path = location.pathname;
         navigate(`${path}/${itemId}`);
-
     }
 
     return (
         <Tooltip>
-            <TooltipTrigger>
+            <TooltipTrigger asChild>
                 <Button
                     variant='outline'
                     size='icon'
                     onClick={handleNavigateToId}
-                    >
-                    <EditIcon/>
+                >
+                    <EditIcon />
                 </Button>
             </TooltipTrigger>
             <TooltipContent>
