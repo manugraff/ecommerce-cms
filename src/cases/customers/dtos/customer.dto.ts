@@ -1,3 +1,4 @@
+
 export interface StateDTO{
     id?: string;
     name: string;
@@ -5,17 +6,19 @@ export interface StateDTO{
     acronym: string;
 }
 
-export interface CityDTO{
+
+export interface CityDTo{
     id?: string;
     name: string;
     ibge: string;
     state: StateDTO;
 }
 
-export interface CustumerDTO{
+export interface CustomerDTO{
     id?: string;
     name: string;
-    address: string;
+    address?: string;
     zipcode: string;
-    city: CityDTO;
+    city: CityDTo;
+
 }

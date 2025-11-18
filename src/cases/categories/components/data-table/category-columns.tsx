@@ -2,7 +2,8 @@ import type { ColumnDef } from "@tanstack/react-table";
 import type { CategoryDTO } from "../../dto/category.dto";
 import { DataTableAction } from "@/components/layout/data-table-actions";
 
-export const categoryColumns: ColumnDef<CategoryDTO> [] = [
+
+export const categoryColumns: ColumnDef<CategoryDTO>[] = [
     {
         accessorKey: 'id',
         header: 'Id'
@@ -19,9 +20,9 @@ export const categoryColumns: ColumnDef<CategoryDTO> [] = [
 
             return(
                 <div className="flex justify-end mr-4">
-                    <DataTableAction itemId={category.id!}/>
+                    <DataTableAction itemId={category.id!} />
                 </div>
             )
-        } 
+        }
     }
 ];

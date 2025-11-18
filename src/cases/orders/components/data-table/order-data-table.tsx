@@ -1,17 +1,17 @@
 import { DataTable } from "@/components/ui/data-table";
-import { brandColumns } from "./order-columns";
-import { useBrands } from "../../hooks/use-brand";
+import { useOrders } from "../../hooks/use-order";
+import { orderColumns } from "./order-columns";
 
-export function BrandDataTable() {
+export function OrderDataTable() {
 
-    const {data: brands, isLoading} = useBrands();
+    const {data: orders, isLoading} = useOrders();
 
     return (
         <div>
             { isLoading ? (
                 <p>Carregando...</p>
             ) : (
-                <DataTable columns={brandColumns} data={brands!} />
+                <DataTable columns={orderColumns} data={orders!} />
             )}
         </div>
 

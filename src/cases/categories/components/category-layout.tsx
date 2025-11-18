@@ -1,22 +1,23 @@
-import { Breadcrumb } from "@/components/ui/breadcrumb"
+
 import { CategoryDataTable } from "./data-table/category-data-table"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group"
 import { Plus, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Outlet, useNavigate } from "react-router-dom"
+import { BreadCrumb } from "@/components/layout/bread-crumb"
 
 export function CategoryLayout() {
-    
-    const navigate = useNavigate();
 
-    function handleCreate(){
+    const navigate = useNavigate();
+    
+    function handleCreate() {
         navigate('/categories/new');
     }
 
     return (
         <div className="p-4">
 
-            <Breadcrumb title="Categorias" />
+            <BreadCrumb title="Categorias" />
 
             <div className="flex flex-col py-4 gap-4">
 
@@ -30,14 +31,14 @@ export function CategoryLayout() {
                     <Button
                         onClick={handleCreate}
                     >
-                        <Plus/>
+                        <Plus />
                         Adicionar
                     </Button>
                 </div>
 
                 <div>
                     <CategoryDataTable />
-                    <Outlet/>
+                    <Outlet />
                 </div>
 
             </div>

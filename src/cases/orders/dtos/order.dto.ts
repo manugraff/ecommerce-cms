@@ -1,4 +1,22 @@
-import type { OrderDTO } from "@/cases/products/dtos/product.dto";
+import type { CustomerDTO } from "@/cases/customers/dtos/customer.dto";
+import type { ProductDTO } from "@/cases/products/dtos/product.dto";
+
+export interface OrdemItemDTO{
+    id?: string; 
+    product: ProductDTO;
+    quantity: number;
+    value: number;
+}
+
+export interface OrderDTO {
+    id?: string; 
+    costumer: CustomerDTO;
+    status: string; 
+    total: number;
+    items: OrdemItemDTO[];
+    createdAt: Date;
+    updatedAt: Date;
+}
 
 export const OrderStatus = [
   {
